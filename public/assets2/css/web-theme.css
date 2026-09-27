@@ -1,0 +1,161 @@
+:root {
+  --background-color: #f3f7f6;
+  --default-color: #53656a;
+  --heading-color: #0b1f33;
+  --accent-color: #087f5b;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  --nav-color: #0b1f33;
+  --nav-hover-color: #087f5b;
+  --nav-mobile-background-color: #0b1f33;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #0b1f33;
+  --nav-dropdown-hover-color: #087f5b;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--default-color);
+}
+
+.container-fluid.d-flex.flex-column.align-items-center {
+  background: var(--surface-color) !important;
+  border-bottom: 1px solid #dce8e4 !important;
+  padding: 18px 1rem !important;
+}
+
+.container-fluid.d-flex.flex-column.align-items-center .fw-semibold {
+  color: var(--heading-color);
+  letter-spacing: .02em;
+}
+
+.container-fluid .badge.bg-primary {
+  background: var(--accent-color) !important;
+}
+
+.header {
+  --background-color: rgba(11, 31, 51, .96);
+  padding: 0;
+}
+
+.header .header-container {
+  background: transparent;
+  min-height: 78px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header .logo {
+  background: var(--accent-color);
+}
+
+.navmenu a,
+.navmenu a:focus {
+  color: rgba(255, 255, 255, .86);
+  font-weight: 500;
+}
+
+.navmenu a:hover,
+.navmenu .active,
+.navmenu li:hover > a {
+  color: #8de2c3;
+}
+
+.navmenu ul ul {
+  border-top: 3px solid var(--accent-color);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 14px 30px rgba(11, 31, 51, .16);
+}
+
+.navmenu ul ul a,
+.navmenu ul ul a:focus {
+  color: var(--nav-dropdown-color);
+}
+
+.navmenu ul ul a:hover,
+.navmenu ul ul li:hover > a {
+  background: #edf8f4;
+  color: var(--accent-color);
+}
+
+.hero,
+.section {
+  background-color: var(--background-color);
+}
+
+.hero h1,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+.btn-primary,
+.action-buttons .btn-primary,
+.btn-get-started {
+  background: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--contrast-color) !important;
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(8, 127, 91, .18);
+}
+
+.btn-primary:hover,
+.action-buttons .btn-primary:hover,
+.btn-get-started:hover {
+  background: #056044 !important;
+  border-color: #056044 !important;
+  transform: translateY(-1px);
+}
+
+.card,
+.info-item,
+.feature-item,
+.course-card,
+.testimonial-item {
+  border-color: #dce8e4;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(11, 31, 51, .06);
+}
+
+.highlight-card-box {
+  box-shadow: 0 16px 36px rgba(11, 31, 51, .16);
+}
+
+.highlight-overlay {
+  background: linear-gradient(105deg, rgba(8, 127, 91, .9), rgba(11, 31, 51, .2)) !important;
+}
+
+.announcement-overlay {
+  background: linear-gradient(105deg, rgba(11, 31, 51, .88), rgba(8, 127, 91, .3)) !important;
+}
+
+.badge-highlight {
+  color: var(--accent-color);
+}
+
+.zona-text {
+  color: #a8f0d2;
+  -webkit-text-stroke: 1px var(--heading-color);
+  text-shadow: 1px 1px 0 var(--heading-color), -1px 1px 0 var(--heading-color),
+    1px -1px 0 var(--heading-color), -1px -1px 0 var(--heading-color);
+}
+
+input, select, textarea {
+  border-color: #dce8e4 !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 0 0 .2rem rgba(8, 127, 91, .12) !important;
+}
+
+.footer {
+  background: var(--heading-color);
+  color: rgba(255, 255, 255, .72);
+}
+
+@media (max-width: 1199px) {
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--contrast-color);
+  }
+}

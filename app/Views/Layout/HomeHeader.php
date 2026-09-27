@@ -48,6 +48,7 @@
 <link href="<?= base_url('assets2/vendor/glightbox/css/glightbox.min.css') ?>" rel="stylesheet">
 <!-- Main CSS File -->
 <link href="<?= base_url('assets2/css/main.css') ?>" rel="stylesheet">
+<link href="<?= base_url('assets2/css/web-theme.css') ?>" rel="stylesheet">
 
 
   <!-- =======================================================

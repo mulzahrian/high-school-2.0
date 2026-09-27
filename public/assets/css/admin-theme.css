@@ -1,0 +1,185 @@
+:root {
+  --admin-navy: #0b1f33;
+  --admin-navy-soft: #12324d;
+  --admin-emerald: #087f5b;
+  --admin-emerald-dark: #056044;
+  --admin-emerald-soft: #dff5ed;
+  --admin-white: #ffffff;
+  --admin-cool-gray: #f3f7f6;
+  --admin-border: #dce8e4;
+  --bs-primary: var(--admin-emerald);
+  --bs-primary-rgb: 8, 127, 91;
+  --bs-primary-bg-subtle: var(--admin-emerald-soft);
+  --bs-primary-text-emphasis: var(--admin-emerald-dark);
+  --bs-body-bg: var(--admin-cool-gray);
+  --bs-body-color: #53656a;
+  --bs-heading-color: var(--admin-navy);
+  --bs-border-color: var(--admin-border);
+  --bs-link-color: var(--admin-navy);
+  --bs-link-hover-color: var(--admin-emerald);
+}
+
+body {
+  background: var(--admin-cool-gray) !important;
+  color: #53656a;
+}
+
+.app-topstrip {
+  background: var(--admin-navy) !important;
+  min-height: 10px;
+  padding: 0 !important;
+}
+
+.app-header {
+  background: var(--admin-white) !important;
+  border-bottom: 1px solid var(--admin-border);
+  box-shadow: 0 8px 24px rgba(11, 31, 51, .06);
+}
+
+.left-sidebar {
+  background: var(--admin-navy);
+  border-right: 0;
+  color: rgba(255, 255, 255, .78);
+  box-shadow: 8px 0 28px rgba(11, 31, 51, .08);
+}
+
+.brand-logo {
+  background: var(--admin-navy-soft);
+  min-height: 74px;
+}
+
+.brand-logo a,
+.brand-logo strong,
+.left-sidebar .sidebartoggler {
+  color: var(--admin-white) !important;
+}
+
+.sidebar-nav {
+  padding: 18px 14px !important;
+}
+
+.nav-small-cap {
+  color: #8bb7aa;
+  letter-spacing: .08em;
+}
+
+.sidebar-nav ul .sidebar-item .sidebar-link {
+  color: rgba(255, 255, 255, .76);
+  border-radius: 10px;
+  margin-bottom: 4px;
+  transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.sidebar-nav ul .sidebar-item .sidebar-link:hover {
+  background: rgba(255, 255, 255, .1);
+  color: var(--admin-white);
+  transform: translateX(2px);
+}
+
+.sidebar-nav ul .sidebar-item.selected > .sidebar-link,
+.sidebar-nav ul .sidebar-item > .sidebar-link.active {
+  background: var(--admin-emerald);
+  color: var(--admin-white);
+  box-shadow: 0 8px 16px rgba(8, 127, 91, .22);
+}
+
+.sidebar-nav ul .sidebar-item .first-level .sidebar-link {
+  color: rgba(255, 255, 255, .62);
+}
+
+.sidebar-nav .has-arrow::after {
+  border-color: currentColor;
+}
+
+.body-wrapper .container-fluid {
+  padding-top: 180px;
+}
+
+.card,
+.dropdown-menu,
+.modal-content {
+  border: 1px solid var(--admin-border);
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(11, 31, 51, .06);
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card-header {
+  background: var(--admin-white);
+  border-bottom: 1px solid var(--admin-border);
+  color: var(--admin-navy);
+}
+
+.card-title,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--admin-navy);
+  font-weight: 700;
+}
+
+.btn-primary,
+.bg-primary {
+  background-color: var(--admin-emerald) !important;
+  border-color: var(--admin-emerald) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--admin-emerald-dark) !important;
+  border-color: var(--admin-emerald-dark) !important;
+}
+
+.btn-outline-primary {
+  color: var(--admin-emerald);
+  border-color: var(--admin-emerald);
+}
+
+.btn-outline-primary:hover {
+  background: var(--admin-emerald);
+  border-color: var(--admin-emerald);
+}
+
+.text-primary {
+  color: var(--admin-emerald) !important;
+}
+
+.table {
+  --bs-table-striped-bg: #f0f7f5;
+  --bs-table-hover-bg: #eaf5f1;
+  color: #53656a;
+}
+
+.table thead th {
+  color: var(--admin-navy);
+  background: #edf6f3;
+  border-bottom-color: var(--admin-border);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.form-control,
+.form-select {
+  border-color: var(--admin-border);
+  border-radius: 9px;
+  background: var(--admin-white);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--admin-emerald);
+  box-shadow: 0 0 0 .2rem rgba(8, 127, 91, .12) !important;
+}
+
+.badge.bg-success,
+.bg-success {
+  background-color: var(--admin-emerald) !important;
+}
+
+@media (max-width: 1199px) {
+  .left-sidebar {
+    background: var(--admin-navy);
+  }
+}
