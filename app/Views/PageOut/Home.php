@@ -1,87 +1,135 @@
 <style>
+/* ==========================================================
+   Highlight & Announcement Cards — modern, elegant treatment
+   ========================================================== */
 .highlight-card-box {
   position: relative;
-  height: 350px;
-  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  isolation: isolate;
+  box-shadow: 0 26px 55px rgba(11, 31, 51, .18);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.highlight-card-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 34px 65px rgba(11, 31, 51, .26);
 }
 
 /* Background Image */
 .highlight-bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  filter: grayscale(30%);
+  transform: scale(1.04);
+  transition: transform .9s cubic-bezier(.19, 1, .22, 1);
 }
 
-/* Overlay Biru Gradient */
+.highlight-card-box:hover .highlight-bg {
+  transform: scale(1.12);
+}
+
+/* Overlay Gradient */
 .highlight-overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0,123,255,0.85), rgba(0,0,0,0.2));
+  inset: 0;
+  background: linear-gradient(115deg, rgba(11, 31, 51, .93) 10%, rgba(8, 127, 91, .55) 58%, rgba(11, 31, 51, .12) 100%);
 }
 
 /* Content */
 .highlight-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  padding: 50px;
+  max-width: 620px;
+  padding: 56px;
   color: #fff;
 }
 
 /* Badge */
 .badge-highlight {
-  background: #fff;
-  color: #007bff;
-  padding: 5px 12px;
-  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, .14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 999px;
   font-weight: 600;
-  display: inline-block;
-  margin-bottom: 15px;
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.badge-highlight.badge-announcement {
+  background: rgba(255, 193, 7, .18);
+  border-color: rgba(255, 193, 7, .45);
+  color: #ffd875;
 }
 
 /* Title */
 .highlight-content h2 {
-  font-size: 28px;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
   font-weight: 700;
-  margin-bottom: 10px;
+  line-height: 1.28;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .25);
 }
 
 /* Desc */
 .highlight-content p {
-  font-size: 15px;
-  margin-bottom: 20px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, .86);
+  margin-bottom: 28px;
 }
 
 /* Button */
 .btn-highlight {
-  display: inline-block;
-  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
   background: #fff;
-  color: #000;
-  border-radius: 25px;
+  color: var(--heading-color, #0b1f33);
+  border-radius: 999px;
   font-weight: 600;
+  font-size: 14px;
   text-decoration: none;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .2);
+  transition: all .3s ease;
+}
+
+.btn-highlight i {
+  transition: transform .3s ease;
 }
 
 .btn-highlight:hover {
-  background: #000;
+  background: var(--accent-color, #087f5b);
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(8, 127, 91, .35);
+}
+
+.btn-highlight:hover i {
+  transform: translateX(4px);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .highlight-content {
-    padding: 25px;
+  .highlight-card-box {
+    min-height: unset;
   }
 
-  .highlight-content h2 {
-    font-size: 20px;
+  .highlight-content {
+    padding: 30px;
   }
 }
 
@@ -94,9 +142,8 @@
 /* Overlay beda warna (biar distinguish dari news) */
 .announcement-overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(255,193,7,0.9), rgba(0,0,0,0.3));
+  inset: 0;
+  background: linear-gradient(115deg, rgba(11, 31, 51, .88) 10%, rgba(255, 193, 7, .35) 70%, rgba(11, 31, 51, .15) 100%);
 }
 </style>
   
@@ -123,7 +170,7 @@
         <!-- Content -->
         <div class="highlight-content">
 
-          <span class="badge-highlight">Highlight</span>
+          <span class="badge-highlight"><i class="bi bi-lightning-charge-fill"></i> Highlight</span>
 
           <h2>
             <?= esc($news_highlight['title']) ?>
@@ -135,7 +182,7 @@
 
           <a href="<?= base_url('news/' . $news_highlight['news_id']) ?>"
              class="btn-highlight">
-            BACA SELENGKAPNYA
+            Baca Selengkapnya <i class="bi bi-arrow-right"></i>
           </a>
 
         </div>
@@ -168,8 +215,8 @@
         <!-- Content -->
         <div class="highlight-content">
 
-          <span class="badge-highlight bg-warning text-dark">
-            Pengumuman <?= esc($announcement['year']) ?>
+          <span class="badge-highlight badge-announcement">
+            <i class="bi bi-megaphone-fill"></i> Pengumuman <?= esc($announcement['year']) ?>
           </span>
 
           <h2>
@@ -502,72 +549,73 @@
 <section class="navigation-section py-5">
   <div class="container">
 
-    <h3 class="section-title mb-4">Navigasi</h3>
-    <p class="section-subtitle mb-4">Akses Fitur Website Lebih Cepat</p>
+    <span class="nav-eyebrow"><i class="bi bi-grid-1x2-fill"></i> Akses Cepat</span>
+    <h3 class="section-title mb-2">Navigasi</h3>
+    <p class="section-subtitle mb-5">Akses Fitur Website Lebih Cepat</p>
 
     <div class="row g-4">
 
       <!-- Item -->
       <div class="col-12 col-md-6 col-lg-4">
         <a href="https://www.ppdb.mansatumandailingnatal.sch.id/" class="nav-card">
-          <i class="bi bi-star" style="font-size:2rem;"></i>
-          <span>SNPBD</span>
+          <span class="nav-icon"><i class="bi bi-star-fill"></i></span>
+          <span class="nav-label">SNPBD</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="https://rdm.man1mandailingnatal.sch.id/auth#!/dashboard" class="nav-card">
-          <i class="bi bi-journal-text" style="font-size:2rem;"></i>
-          <span>RAPORT</span>
+          <span class="nav-icon"><i class="bi bi-journal-text"></i></span>
+          <span class="nav-label">RAPORT</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="<?= base_url('outtracat') ?>" class="nav-card">
-          <i class="bi bi-box-arrow-in-right" style="font-size:2rem;"></i>
-          <span>PTSP</span>
+          <span class="nav-icon"><i class="bi bi-box-arrow-in-right"></i></span>
+          <span class="nav-label">PTSP</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="#" class="nav-card">
-          <i class="bi bi-info-circle" style="font-size:2rem;"></i>
-          <span>PPID</span>
+          <span class="nav-icon"><i class="bi bi-info-circle-fill"></i></span>
+          <span class="nav-label">PPID</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="<?= base_url('outzona-integrasi') ?>" class="nav-card">
-          <i class="bi bi-pencil-square" style="font-size:2rem;"></i>
-          <span>ZONA INTEGRITAS</span>
+          <span class="nav-icon"><i class="bi bi-pencil-square"></i></span>
+          <span class="nav-label">ZONA INTEGRITAS</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="https://rdm.man1mandailingnatal.sch.id/auth#!/dashboard" class="nav-card">
-          <i class="bi bi-exclamation-circle" style="font-size:2rem;"></i>
-          <span>LAPOR</span>
+          <span class="nav-icon"><i class="bi bi-exclamation-circle-fill"></i></span>
+          <span class="nav-label">LAPOR</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="<?= base_url('outmutasi-siswa') ?>" class="nav-card">
-          <i class="bi bi-people" style="font-size:2rem;"></i>
-          <span>KESISWAAN</span>
+          <span class="nav-icon"><i class="bi bi-people-fill"></i></span>
+          <span class="nav-label">KESISWAAN</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="<?= base_url('outsks') ?>" class="nav-card">
-          <i class="bi bi-book" style="font-size:2rem;"></i>
-          <span>KURIKULUM</span>
+          <span class="nav-icon"><i class="bi bi-book-fill"></i></span>
+          <span class="nav-label">KURIKULUM</span>
         </a>
       </div>
 
       <div class="col-12 col-md-6 col-lg-4">
         <a href="#" class="nav-card">
-          <i class="bi bi-people-network" style="font-size:2rem;"></i>
-          <span>HUMAS</span>
+          <span class="nav-icon"><i class="bi bi-people-network"></i></span>
+          <span class="nav-label">HUMAS</span>
         </a>
       </div>
 
@@ -578,20 +626,54 @@
 <style>
 /* section wrapper */
 .navigation-section {
-  background-color: #04415f; /* biru sekolahan */
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--heading-color, #0b1f33) 0%, #13324a 55%, var(--heading-color, #0b1f33) 100%);
   color: #fff;
-  border-radius: 18px;
-  padding: 40px 20px;
+  border-radius: 28px;
+  padding: 64px 32px;
+}
+
+.navigation-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(8, 127, 91, .35), transparent 45%),
+    radial-gradient(circle at 6% 95%, rgba(8, 127, 91, .22), transparent 42%);
+  pointer-events: none;
+}
+
+.navigation-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.navigation-section .nav-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: #8de2c3;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
 .navigation-section .section-title {
   font-weight: 700;
   color: #fff;
   text-align: left;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
 }
 
 .navigation-section .section-subtitle {
-  color: #fff;
+  color: rgba(255, 255, 255, .68);
   text-align: left;
 }
 
@@ -601,31 +683,57 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 25px 15px;
-  background-color: transparent;
-  border: 2px solid #fff;
-  border-radius: 12px;
+  gap: 14px;
+  padding: 30px 18px;
+  background: rgba(255, 255, 255, .04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 18px;
   text-align: center;
   color: #fff;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 14px;
+  letter-spacing: .02em;
+  transition: all .35s ease;
   width: 100%;
-  min-height: 140px; /* bikin semua card rata tinggi */
+  min-height: 150px; /* bikin semua card rata tinggi */
   box-sizing: border-box;
 }
 
-.nav-card i {
-  display: block;
+.nav-card .nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(8, 127, 91, .4), rgba(8, 127, 91, .12));
+  color: #8de2c3;
+  font-size: 1.6rem;
+  transition: all .35s ease;
 }
 
 /* hover effect */
 .nav-card:hover {
-  background-color: #fff;
-  color: #04415f;
+  background: var(--accent-color, #087f5b);
+  border-color: var(--accent-color, #087f5b);
+  color: #fff;
   text-decoration: none;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 22px 42px rgba(8, 127, 91, .35);
+}
+
+.nav-card:hover .nav-icon {
+  background: rgba(255, 255, 255, .22);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+@media (max-width: 576px) {
+  .navigation-section {
+    padding: 44px 20px;
+  }
 }
 </style>
   </main>
