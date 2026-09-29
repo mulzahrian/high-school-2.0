@@ -307,21 +307,6 @@
 
   </div>
 
-  <!-- Overlay -->
-  <div class="banner-overlay-content">
-
-    <span class="banner-chip"><i class="bi bi-patch-check-fill"></i> Zona Integritas</span>
-
-    <div class="banner-logos mb-3">
-      <img src="<?= base_url('assets2/img/Logo.png') ?>" height="46">
-      <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" height="46">
-    </div>
-
-    <h2>Selamat Datang di MAN 1 Mandailing Natal</h2>
-    <p>Madrasah Aliyah Negeri yang Smart, Disiplin, dan Religius</p>
-
-  </div>
-
   <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
     <span class="banner-nav-icon"><i class="bi bi-chevron-left"></i></span>
   </button>
@@ -330,6 +315,19 @@
   </button>
 
 </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Caption below the slides -->
+  <div class="banner-caption">
+
+    <span class="banner-chip"><i class="bi bi-patch-check-fill"></i> Zona Integritas</span>
+
+    <div class="banner-logos">
+      <img src="<?= base_url('assets2/img/Logo.png') ?>" height="42">
+      <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" height="42">
+    </div>
+
+    <h2>Selamat Datang di MAN 1 Mandailing Natal</h2>
+    <p>Madrasah Aliyah Negeri yang Smart, Disiplin, dan Religius</p>
+
+  </div>
+</div>
