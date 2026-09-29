@@ -51,7 +51,7 @@
 
     <div class="text-center mb-5">
       <h2>Pidato Kepala Sekolah</h2>
-      <p>Menginspirasi seluruh civitas MAN 1 Mandailing Natal</p>
+      <p>Menginspirasi seluruh civitas MAN 2 Mandailing Natal</p>
     </div>
 
     <div class="row justify-content-center">

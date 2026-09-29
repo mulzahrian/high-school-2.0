@@ -45,7 +45,7 @@
         <div class="video-box text-center">
 
           <div class="video-desc">
-            Profil MAN 1 Mandailing Natal
+            Profil MAN 2 Mandailing Natal
           </div>
 
           <div class="video-frame">

@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <style>
-  /* ===== Banner Carousel: melengkung + tulisan di dalam gambar ===== */
+/* ===== Banner Carousel: full-width, tulisan di tengah ===== */
 
-/* Pembungkus: beri jarak samping supaya lengkungan terlihat */
+/* Pembungkus: tanpa margin/padding samping, sampai ke ujung layar */
 .banner-shell {
-  max-width: 1320px;
-  margin: 24px auto;
-  padding: 0 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* Carousel: sisi melengkung, gambar ikut terpotong */
+/* Carousel: lebar penuh. Lengkung hanya di sudut bawah */
 .modern-carousel {
   position: relative;
-  border-radius: 32px;
+  width: 100%;
+  border-radius: 0 0 40px 40px;
   overflow: hidden;
   isolation: isolate;
   box-shadow: 0 26px 55px rgba(11, 31, 51, .2);
 }
 
-/* Tinggi tetap supaya semua gambar seragam */
+/* Tinggi seragam untuk semua slide */
 .modern-carousel .carousel-inner,
 .modern-carousel .carousel-item {
   height: 520px;
-  border-radius: 32px;
 }
 
 .modern-carousel .carousel-item img {
@@ -32,30 +33,31 @@
   object-position: center;
 }
 
-/* Overlay gelap agar tulisan terbaca */
+/* Overlay gelap merata, karena tulisan di tengah */
 .modern-carousel .carousel-inner::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(115deg,
-    rgba(11, 31, 51, .88) 10%,
-    rgba(8, 127, 91, .45) 60%,
-    rgba(11, 31, 51, .1) 100%);
+  background: linear-gradient(180deg,
+    rgba(11, 31, 51, .55) 0%,
+    rgba(8, 127, 91, .40) 50%,
+    rgba(11, 31, 51, .75) 100%);
 }
 
-/* TULISAN: menempel di dalam gambar carousel */
+/* TULISAN: di tengah-tengah gambar */
 .modern-carousel .banner-overlay-content {
   position: absolute;
   inset: 0;
   z-index: 5;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 720px;
-  padding: 56px;
+  align-items: center;       /* tengah horizontal */
+  justify-content: center;   /* tengah vertikal */
+  text-align: center;
+  max-width: 100%;
+  padding: 40px 24px;
   color: #fff;
   pointer-events: none;
 }
@@ -80,6 +82,7 @@
 .modern-carousel .banner-logos {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 14px;
 }
 
@@ -92,17 +95,19 @@
 }
 
 .modern-carousel .banner-overlay-content h2 {
+  max-width: 820px;
   font-size: clamp(1.7rem, 4vw, 2.8rem);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 10px;
   color: #fff;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, .3);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .35);
 }
 
 .modern-carousel .banner-overlay-content p {
+  max-width: 640px;
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, .88);
+  color: rgba(255, 255, 255, .9);
   margin: 0;
 }
 
@@ -110,7 +115,7 @@
 .modern-carousel .carousel-control-prev,
 .modern-carousel .carousel-control-next {
   z-index: 6;
-  width: 10%;
+  width: 8%;
 }
 
 .modern-carousel .banner-nav-icon {
@@ -136,13 +141,10 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .banner-shell { padding: 0 10px; margin: 14px auto; }
-  .modern-carousel,
-  .modern-carousel .carousel-inner,
-  .modern-carousel .carousel-item { border-radius: 22px; }
+  .modern-carousel { border-radius: 0 0 26px 26px; }
   .modern-carousel .carousel-inner,
   .modern-carousel .carousel-item { height: 440px; }
-  .modern-carousel .banner-overlay-content { padding: 28px; }
+  .modern-carousel .banner-overlay-content { padding: 28px 18px; }
   .modern-carousel .banner-logos img { height: 42px; }
 }
 </style>
@@ -162,7 +164,7 @@
 
     <!-- School Name -->
     <div class="topbar-schoolname">
-      MAN 1 Mandailing Natal
+      MAN 2 Mandailing Natal
     </div>
 
     <!-- Tagline -->
@@ -179,7 +181,7 @@
   
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Man 1 Mandailing Natal</title>
+  <title>MAN 2 Mandailing Natal</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -218,7 +220,7 @@
       <a href="<?= base_url('home') ?>" class="logo-lockup d-flex align-items-center me-auto">
         <img src="<?= base_url('assets2/img/Logo.png') ?>" alt="" height="52">
         <span class="logo-text">
-          <strong>MAN 1</strong>
+          <strong>MAN 2</strong>
           <small>Mandailing Natal</small>
         </span>
       </a>
@@ -436,19 +438,19 @@
   <div class="carousel-inner">
 
     <div class="carousel-item active">
-      <img src="<?= base_url('assets2/img/banner.jpeg') ?>" 
+      <img src="<?= base_url('assets2/img/image1.jpg') ?>" 
            class="d-block w-100" 
            alt="Banner 1">
     </div>
 
     <div class="carousel-item">
-      <img src="<?= base_url('assets2/img/banner2.jpeg') ?>" 
+      <img src="<?= base_url('assets2/img/image2.jpg') ?>" 
            class="d-block w-100"
            alt="Banner 2">
     </div>
 
     <div class="carousel-item">
-      <img src="<?= base_url('assets2/img/banner3.jpeg') ?>" 
+      <img src="<?= base_url('assets2/img/image4.jpg') ?>" 
            class="d-block w-100" 
            alt="Banner 3">
     </div>
@@ -465,7 +467,7 @@
       <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" height="46">
     </div>
 
-    <h2>Selamat Datang di MAN 1 Mandailing Natal</h2>
+    <h2>Selamat Datang di MAN 2 Mandailing Natal</h2>
     <p>Madrasah Aliyah Negeri yang Smart, Disiplin, dan Religius</p>
 
   </div>

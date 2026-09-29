@@ -1,4 +1,193 @@
 <style>
+  /* ===== Utility: potong teks panjang ===== */
+.highlight-content h2,
+.program-header h3,
+.program-item .item-content h4,
+.news-card-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.highlight-content h2 { -webkit-line-clamp: 3; }
+.program-header h3,
+.program-item .item-content h4,
+.news-card-title { -webkit-line-clamp: 2; }
+
+/* ===== Card besar: Berita Terkini ===== */
+.program-banner {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(11, 31, 51, .12);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.program-banner .banner-image {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+.program-banner .banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+.program-banner:hover .banner-image img { transform: scale(1.07); }
+
+.program-banner .banner-info {
+  padding: 26px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.program-banner .program-header h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+.program-banner .banner-excerpt {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #5b6773;
+  margin-bottom: 22px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.program-banner .discover-btn { margin-top: auto; align-self: flex-start; }
+
+/* ===== List berita kecil di sebelah kanan ===== */
+.program-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(11, 31, 51, .08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.program-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(11, 31, 51, .14);
+}
+.program-item .item-icon {
+  flex: 0 0 96px;
+  width: 96px;
+  height: 96px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.program-item .item-icon img { width: 100%; height: 100%; object-fit: cover; }
+.program-item .item-content { flex: 1; min-width: 0; }
+.program-item .item-content h4 { font-size: 1rem; font-weight: 700; line-height: 1.4; margin-bottom: 6px; }
+.program-item .item-content p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #66737f;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.program-item .meta-info { font-size: 12.5px; color: #8a96a1; }
+
+/* ===== Card berita: Semua Berita ===== */
+.news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 12px 32px rgba(11, 31, 51, .09);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 46px rgba(11, 31, 51, .18);
+  color: inherit;
+}
+
+.news-card-img {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.news-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+.news-card:hover .news-card-img img { transform: scale(1.08); }
+
+.news-card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--accent-color, #087f5b);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.news-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 22px 20px;
+}
+.news-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--heading-color, #0b1f33);
+  margin: 0 0 10px;
+}
+.news-card-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #66737f;
+  margin: 0 0 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-card-foot {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #eef1f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  color: #8a96a1;
+}
+.news-card-more {
+  color: var(--accent-color, #087f5b);
+  font-weight: 600;
+}
+.news-card-more i { transition: transform .3s ease; }
+.news-card:hover .news-card-more i { transform: translateX(4px); }
+
+@media (max-width: 576px) {
+  .program-banner .banner-image { height: 220px; }
+  .program-item .item-icon { flex-basis: 80px; width: 80px; height: 80px; }
+}
 /* ==========================================================
    Highlight & Announcement Cards — modern, elegant treatment
    ========================================================== */
@@ -258,7 +447,7 @@
 <p>
   <?= isset($opening)
       ? esc(strip_tags($opening['content']))
-      : 'MAN 1 Mandailing Natal berkomitmen menyelenggarakan pendidikan yang bermutu...' ?>
+      : 'MAN 2 Mandailing Natal berkomitmen menyelenggarakan pendidikan yang bermutu...' ?>
 </p>              <div class="action-buttons">
                 <a href="#" class="btn-primary">Start Your Journey</a>
                 <a href="<?= base_url('sejarah') ?>" class="btn-secondary">Kenali Kami <i class="bi bi-arrow-right"></i></a>
@@ -380,7 +569,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Berita Terkini</h2>
-        <p>Informasi Terkini Mengenai MAN 1 Mandailing Natal</p>
+        <p>Informasi Terkini Mengenai MAN 2 Mandailing Natal</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -403,7 +592,9 @@
           <h3><?= esc($news_highlight['title']) ?></h3>
         </div>
 
-        <?= $news_highlight['content'] ?>
+        <p class="banner-excerpt">
+  <?= word_limiter(strip_tags($news_highlight['content']), 30) ?>
+</p>
 
         <a href="<?= base_url('news/' . $news_highlight['news_id']) ?>"
            class="discover-btn">
@@ -462,7 +653,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Semua Berita</h2>
-        <p>Kumpulan Berita dan Kegiatan Terbaru MAN 1 Mandailing Natal</p>
+        <p>Kumpulan Berita dan Kegiatan Terbaru MAN 2 Mandailing Natal</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -471,41 +662,29 @@
 
 <?php foreach ($news as $item): ?>
   <div class="col-md-6 col-xl-4" data-aos="fade-up">
+    <a href="<?= base_url('news/' . $item['news_id']) ?>" class="news-card">
 
-    <a href="<?= base_url('news/' . $item['news_id']) ?>"
-       class="text-decoration-none text-dark">
+      <div class="news-card-img">
+        <img src="<?= base_url('uploads/news/' . $item['thumbnail']) ?>"
+             alt="<?= esc($item['title']) ?>"
+             loading="lazy">
+        <span class="news-card-tag">Berita</span>
+      </div>
 
-      <article class="post-item d-flex">
+      <div class="news-card-body">
+        <h3 class="news-card-title"><?= esc($item['title']) ?></h3>
 
-        <div class="post-img">
-          <img src="<?= base_url('uploads/news/' . $item['thumbnail']) ?>"
-               alt="<?= esc($item['title']) ?>"
-               class="img-fluid"
-               loading="lazy">
+        <p class="news-card-text">
+          <?= word_limiter(strip_tags($item['content']), 22) ?>
+        </p>
+
+        <div class="news-card-foot">
+          <span><i class="bi bi-calendar3"></i> <?= date('d M Y', strtotime($item['created_at'])) ?></span>
+          <span class="news-card-more">Baca <i class="bi bi-arrow-right"></i></span>
         </div>
-
-        <div class="post-content flex-grow-1">
-          <span class="category">Berita</span>
-
-          <h2 class="post-title">
-            <?= esc($item['title']) ?>
-          </h2>
-
-          <p class="post-description">
-            <?= word_limiter(strip_tags($item['content']), 25) ?>
-          </p>
-
-          <div class="post-meta">
-            <span class="post-date">
-              <?= date('d M Y', strtotime($item['created_at'])) ?>
-            </span>
-          </div>
-        </div>
-
-      </article>
+      </div>
 
     </a>
-
   </div>
 <?php endforeach ?>
 
@@ -717,7 +896,7 @@
       <div class="row gy-4">
         <div class="col-lg-5 col-md-6 footer-about">
           <a href="<?= base_url('home') ?>" class="logo d-flex align-items-center">
-            <span class="sitename">MAN 1 Mandailing Natal</span>
+            <span class="sitename">MAN 2 Mandailing Natal</span>
           </a>
           <p class="footer-tagline">Madrasah Aliyah Negeri yang Smart, Disiplin, dan Religius — mencetak generasi berilmu dan berakhlak mulia.</p>
           <div class="footer-contact pt-3">
@@ -759,7 +938,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">MAN 1 Mandailing Natal</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">MAN 2 Mandailing Natal</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->

@@ -115,7 +115,7 @@
     <div class="row gy-4">
       <div class="col-lg-4 col-md-6 footer-about">
         <a href="#" class="logo d-flex align-items-center">
-          <span class="sitename">MAN 1 Mandailing Natal</span>
+          <span class="sitename">MAN 2 Mandailing Natal</span>
         </a>
         <div class="footer-contact pt-3">
           <p>Sumatra Utara, Indonesia</p>
@@ -128,7 +128,7 @@
   </div>
 
   <div class="container text-center mt-4">
-    <p>© MAN 1 Mandailing Natal</p>
+    <p>© MAN 2 Mandailing Natal</p>
   </div>
 
 </footer>

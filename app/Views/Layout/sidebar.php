@@ -8,7 +8,7 @@
             <img src="<?= base_url('assets/images/logos/Logo.png') ?>" 
               alt="Logo"
               style="width: 40px; height: auto;" />
-              <strong>MAN 1</strong>
+              <strong>MAN 2</strong>
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-6"></i>
