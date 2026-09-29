@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Carousel Test</title>
+  <link href="assets2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets2/css/main.css" rel="stylesheet">
+  <link href="assets2/css/web-theme.css" rel="stylesheet">
+</head>
+<body class="index-page">
+
+<div class="banner-shell">
+<div id="bannerCarousel"
+     class="carousel slide carousel-fade position-relative modern-carousel"
+     data-bs-ride="carousel"
+     data-bs-interval="1500">
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets2/img/banner.jpeg" class="d-block w-100" alt="Banner 1">
+    </div>
+    <div class="carousel-item">
+      <img src="assets2/img/banner2.jpeg" class="d-block w-100" alt="Banner 2">
+    </div>
+    <div class="carousel-item">
+      <img src="assets2/img/banner3.jpeg" class="d-block w-100" alt="Banner 3">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+    <span class="banner-nav-icon"><i class="bi bi-chevron-left"></i></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+    <span class="banner-nav-icon"><i class="bi bi-chevron-right"></i></span>
+  </button>
+</div>
+</div>
+
+<div id="log" style="padding:20px;font-family:monospace;"></div>
+
+<script src="assets2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('log').innerText = 'window load fired. Carousel instance: ' + (bootstrap.Carousel.getInstance(document.getElementById('bannerCarousel')) ? 'EXISTS' : 'MISSING');
+  });
+  document.getElementById('bannerCarousel').addEventListener('slide.bs.carousel', function(e) {
+    console.log('SLIDE EVENT', e.to);
+    document.getElementById('log').innerText += ' | slide to ' + e.to;
+  });
+</script>
+</body>
+</html>
