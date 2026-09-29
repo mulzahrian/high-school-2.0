@@ -534,7 +534,7 @@
 
           <div class="col-lg-6">
   <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
-    <img src="<?= base_url('assets2/img/page2.jpeg') ?>"
+    <img src="<?= base_url('assets2/img/image1.jpg') ?>"
          alt="Campus"
          class="img-fluid rounded">
 
