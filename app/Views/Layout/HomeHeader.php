@@ -1,4 +1,151 @@
 <!DOCTYPE html>
+<style>
+  /* ===== Banner Carousel: melengkung + tulisan di dalam gambar ===== */
+
+/* Pembungkus: beri jarak samping supaya lengkungan terlihat */
+.banner-shell {
+  max-width: 1320px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* Carousel: sisi melengkung, gambar ikut terpotong */
+.modern-carousel {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 26px 55px rgba(11, 31, 51, .2);
+}
+
+/* Tinggi tetap supaya semua gambar seragam */
+.modern-carousel .carousel-inner,
+.modern-carousel .carousel-item {
+  height: 520px;
+  border-radius: 32px;
+}
+
+.modern-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Overlay gelap agar tulisan terbaca */
+.modern-carousel .carousel-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(115deg,
+    rgba(11, 31, 51, .88) 10%,
+    rgba(8, 127, 91, .45) 60%,
+    rgba(11, 31, 51, .1) 100%);
+}
+
+/* TULISAN: menempel di dalam gambar carousel */
+.modern-carousel .banner-overlay-content {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 720px;
+  padding: 56px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.modern-carousel .banner-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .3);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.modern-carousel .banner-logos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.modern-carousel .banner-logos img {
+  height: 56px;
+  width: auto;
+  background: rgba(255, 255, 255, .95);
+  padding: 6px;
+  border-radius: 14px;
+}
+
+.modern-carousel .banner-overlay-content h2 {
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .3);
+}
+
+.modern-carousel .banner-overlay-content p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, .88);
+  margin: 0;
+}
+
+/* Tombol panah */
+.modern-carousel .carousel-control-prev,
+.modern-carousel .carousel-control-next {
+  z-index: 6;
+  width: 10%;
+}
+
+.modern-carousel .banner-nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, .35);
+  color: #fff;
+  font-size: 1.1rem;
+  transition: background .3s ease;
+}
+
+.modern-carousel .carousel-control-prev:hover .banner-nav-icon,
+.modern-carousel .carousel-control-next:hover .banner-nav-icon {
+  background: rgba(255, 255, 255, .35);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .banner-shell { padding: 0 10px; margin: 14px auto; }
+  .modern-carousel,
+  .modern-carousel .carousel-inner,
+  .modern-carousel .carousel-item { border-radius: 22px; }
+  .modern-carousel .carousel-inner,
+  .modern-carousel .carousel-item { height: 440px; }
+  .modern-carousel .banner-overlay-content { padding: 28px; }
+  .modern-carousel .banner-logos img { height: 42px; }
+}
+</style>
 <html lang="en">
   <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/images/logos/favicon.ico') ?>" />
 
