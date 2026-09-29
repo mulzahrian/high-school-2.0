@@ -2,25 +2,28 @@
 <html lang="en">
   <link rel="shortcut icon" type="image/png" href="<?= base_url('assets/images/logos/favicon.ico') ?>" />
 
-<!-- Top Logo Bar -->
-<div class="container-fluid d-flex flex-column align-items-center py-2 border-bottom bg-white text-center">
+<!-- Top Identity Bar -->
+<div class="topbar-identity">
+  <div class="container-fluid d-flex flex-column align-items-center text-center">
 
-  <!-- Logos -->
-  <div class="d-flex align-items-center gap-3">
-<img src="<?= base_url('assets2/img/Logo.png') ?>" alt="Logo MAN" height="40">
-<img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" alt="Logo Kementrian" height="40">
+    <!-- Logos -->
+    <div class="d-flex align-items-center gap-3 topbar-logos">
+      <img src="<?= base_url('assets2/img/Logo.png') ?>" alt="Logo MAN" height="40">
+      <span class="topbar-divider"></span>
+      <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" alt="Logo Kementrian" height="40">
+    </div>
+
+    <!-- School Name -->
+    <div class="topbar-schoolname">
+      MAN 1 Mandailing Natal
+    </div>
+
+    <!-- Tagline -->
+    <span class="topbar-tagline">
+      <i class="bi bi-award-fill"></i> Smart &middot; Disiplin &middot; Religius
+    </span>
+
   </div>
-
-  <!-- School Name -->
-  <div class="fw-semibold mt-1">
-    MAN 1 Mandailing Natal
-  </div>
-
-  <!-- Tagline -->
-  <span class="badge rounded-pill bg-primary px-3 py-2 mt-2">
-    Smart, Disiplin, Religius
-  </span>
-
 </div>
 
 
@@ -65,10 +68,12 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
 
-      <a href="index.html" class="align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-<img src="<?= base_url('assets2/img/Logo.png') ?>" alt="" height="70">
-        <!-- <h1 class="sitename">College</h1> -->
+      <a href="<?= base_url('home') ?>" class="logo-lockup d-flex align-items-center me-auto">
+        <img src="<?= base_url('assets2/img/Logo.png') ?>" alt="" height="52">
+        <span class="logo-text">
+          <strong>MAN 1</strong>
+          <small>Mandailing Natal</small>
+        </span>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -265,79 +270,66 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+
+      <a href="https://pmb.man1mandailingnatal.sch.id/" class="header-cta d-none d-xl-inline-flex">
+        PPDB Online <i class="bi bi-arrow-up-right"></i>
+      </a>
     </div>
   </header>
 
       <!-- Banner Section -->
 <!-- Carousel Banner -->
+<div class="banner-shell">
 <div id="bannerCarousel" 
-     class="carousel slide carousel-fade position-relative" 
+     class="carousel slide carousel-fade position-relative modern-carousel" 
      data-bs-ride="carousel" 
-     data-bs-interval="2000">
+     data-bs-interval="4500">
 
   <div class="carousel-inner">
 
     <div class="carousel-item active">
       <img src="<?= base_url('assets2/img/banner.jpeg') ?>" 
            class="d-block w-100" 
-           style="height:400px; object-fit:cover;"
            alt="Banner 1">
     </div>
 
     <div class="carousel-item">
       <img src="<?= base_url('assets2/img/banner2.jpeg') ?>" 
            class="d-block w-100"
-           style="height:400px; object-fit:cover;"
            alt="Banner 2">
     </div>
 
-    <div class="carousel-item active">
+    <div class="carousel-item">
       <img src="<?= base_url('assets2/img/banner3.jpeg') ?>" 
            class="d-block w-100" 
-           style="height:400px; object-fit:cover;"
            alt="Banner 3">
     </div>
 
   </div>
 
   <!-- Overlay -->
-  <div class="position-absolute top-50 start-50 translate-middle text-center w-100" style="z-index: 10;">
+  <div class="banner-overlay-content">
 
-    <!-- Logo -->
-    <div class="mb-2">
-      <img src="<?= base_url('assets2/img/Logo.png') ?>" height="50">
-      <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" height="50">
+    <span class="banner-chip"><i class="bi bi-patch-check-fill"></i> Zona Integritas</span>
+
+    <div class="banner-logos mb-3">
+      <img src="<?= base_url('assets2/img/Logo.png') ?>" height="46">
+      <img src="<?= base_url('assets2/img/KementerianLogo.png') ?>" height="46">
     </div>
 
-    <!-- Text -->
-    <h2 class="fw-bold text-white bg-dark bg-opacity-50 px-4 py-2 rounded d-inline-block">
-      Selamat Datang di MAN 1 Mandailing Natal
-    </h2>
-
-    <p class="fw-bold mt-2 zona-text">
-  Zona Integritas
-</p>
+    <h2>Selamat Datang di MAN 1 Mandailing Natal</h2>
+    <p>Madrasah Aliyah Negeri yang Smart, Disiplin, dan Religius</p>
 
   </div>
 
+  <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+    <span class="banner-nav-icon"><i class="bi bi-chevron-left"></i></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+    <span class="banner-nav-icon"><i class="bi bi-chevron-right"></i></span>
+  </button>
+
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<style>
-  .zona-text {
-  font-size: 32px; /* lebih besar */
-  font-weight: 800;
-  color: red;
-
-  /* garis luar putih */
-  -webkit-text-stroke: 1.5px white;
-
-  /* fallback biar tetap keliatan di browser lain */
-  text-shadow: 
-    1px 1px 0 white,
-   -1px 1px 0 white,
-    1px -1px 0 white,
-   -1px -1px 0 white;
-}
-</style>

@@ -249,8 +249,9 @@
     <section id="hero" class="hero section">
       <div class="hero-wrapper">
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7 hero-content" data-aos="fade-right" data-aos-delay="100">
+              <span class="hero-eyebrow"><i class="bi bi-mortarboard-fill"></i> Madrasah Aliyah Negeri</span>
               <h1>
   <?= isset($opening) ? esc($opening['header']) : 'Smart, Disiplin, Religius' ?>
 </h1>
@@ -260,14 +261,43 @@
       : 'MAN 1 Mandailing Natal berkomitmen menyelenggarakan pendidikan yang bermutu...' ?>
 </p>              <div class="action-buttons">
                 <a href="#" class="btn-primary">Start Your Journey</a>
+                <a href="<?= base_url('sejarah') ?>" class="btn-secondary">Kenali Kami <i class="bi bi-arrow-right"></i></a>
+              </div>
+
+              <div class="hero-pillars">
+                <div class="pillar-item">
+                  <span class="pillar-index">01</span>
+                  <div class="pillar-body">
+                    <h4><i class="bi bi-book-fill"></i> Smart</h4>
+                    <p>Mengembangkan kecerdasan intelektual, kreativitas, dan kemampuan berpikir kritis peserta didik melalui pembelajaran yang aktif, inovatif, dan berorientasi pada prestasi.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <span class="pillar-index">02</span>
+                  <div class="pillar-body">
+                    <h4><i class="bi bi-laptop-fill"></i> Disiplin</h4>
+                    <p>Menanamkan sikap tertib, tanggung jawab, dan konsistensi dalam belajar maupun berperilaku sebagai fondasi utama kesuksesan di masa depan.</p>
+                  </div>
+                </div>
+
+                <div class="pillar-item">
+                  <span class="pillar-index">03</span>
+                  <div class="pillar-body">
+                    <h4><i class="bi bi-people-fill"></i> Religius</h4>
+                    <p>Membentuk karakter peserta didik yang beriman, berakhlak mulia, dan menjadikan nilai-nilai keislaman sebagai pedoman dalam kehidupan sehari-hari.</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-lg-5 hero-media" data-aos="zoom-in" data-aos-delay="200">
+              <div class="hero-media-frame">
 <img src="<?= isset($opening) && $opening['image']
     ? base_url('uploads/opening/' . $opening['image'])
     : base_url('assets2/img/education/image1.jpeg') ?>"
      alt="Education"
      class="img-fluid main-image">
+              </div>
               <div class="image-overlay">
                 <div class="badge-accredited">
                   <i class="bi bi-patch-check-fill"></i>
@@ -279,68 +309,8 @@
         </div>
       </div>
 
-      <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="bi bi-book-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Smart</h3>
-                  <p>Mengembangkan kecerdasan intelektual, kreativitas, dan kemampuan berpikir kritis peserta didik melalui pembelajaran yang aktif, inovatif, dan berorientasi pada prestasi.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="feature-card active">
-                <div class="feature-icon">
-                  <i class="bi bi-laptop-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Disiplin</h3>
-                  <p>Menanamkan sikap tertib, tanggung jawab, dan konsistensi dalam belajar maupun berperilaku sebagai fondasi utama kesuksesan di masa depan.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-              <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="bi bi-people-fill"></i>
-                </div>
-                <div class="feature-content">
-                  <h3>Religius</h3>
-                  <p>Membentuk karakter peserta didik yang beriman, berakhlak mulia, dan menjadikan nilai-nilai keislaman sebagai pedoman dalam kehidupan sehari-hari.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
-        <div class="container">
-          <div class="event-content">
-            <div class="event-date">
-              <span class="day">15</span>
-              <span class="month">NOV</span>
-            </div>
-            <div class="event-info">
-              <h3>Spring Semester Open House</h3>
-              <p>Join us to explore campus facilities, meet our faculty, and learn about scholarship opportunities.</p>
-            </div>
-            <div class="event-action">
-              <a href="#" class="btn-event">RSVP Now</a>
-              <span class="countdown">Starts in 3 weeks</span>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </section><!-- /Hero Section -->
+
 
     <!-- About Section -->
     <section id="about" class="about section">
@@ -350,9 +320,9 @@
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-              <h3>Our Story</h3>
+              <h3>Cerita Kami</h3>
               <h2>Menapaki Sejarah, Membangun Generasi Berilmu dan Berakhlak</h2>
-              <p></p>
+              <p>Perjalanan panjang membangun madrasah unggulan yang berlandaskan ilmu pengetahuan, kedisiplinan, dan nilai-nilai keislaman.</p>
 
               <div class="timeline">
 
@@ -383,7 +353,7 @@
 
       <!-- MISSION -->
       <div class="mission">
-        <h3>Our Mission</h3>
+        <h3><i class="bi bi-bullseye"></i> Misi Kami</h3>
         <?= isset($mission)
             ? $mission['content']
             : '<p>Mission content not available.</p>' ?>
@@ -391,7 +361,7 @@
 
       <!-- VISION -->
       <div class="vision">
-        <h3>Our Vision</h3>
+        <h3><i class="bi bi-eye-fill"></i> Visi Kami</h3>
         <?= isset($vision)
             ? $vision['content']
             : '<p>Vision content not available.</p>' ?>
@@ -410,7 +380,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Berita Terkini</h2>
-        <p>Informasi Terkni Mengenai Man 1 Mandailing Natal</p>
+        <p>Informasi Terkini Mengenai MAN 1 Mandailing Natal</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -424,7 +394,7 @@
              alt="Berita"
              class="img-fluid">
         <div class="banner-badge">
-          <span class="badge-text">Highlight</span>
+          <span class="badge-text"><i class="bi bi-star-fill"></i> Highlight</span>
         </div>
       </div>
 
@@ -437,7 +407,7 @@
 
         <a href="<?= base_url('news/' . $news_highlight['news_id']) ?>"
            class="discover-btn">
-          Baca Berita
+          Baca Berita <i class="bi bi-arrow-right"></i>
         </a>
       </div>
     </div>
@@ -461,7 +431,10 @@
 
             <div class="item-content">
               <h4><?= esc($row['title']) ?></h4>
-              <?= esc(substr(strip_tags($row['content']), 0, 120)) ?>...
+              <p><?= esc(substr(strip_tags($row['content']), 0, 100)) ?>...</p>
+              <div class="meta-info">
+                <span><i class="bi bi-calendar3"></i> <?= date('d M Y', strtotime($row['created_at'])) ?></span>
+              </div>
             </div>
 
             <div class="item-arrow">
@@ -488,8 +461,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Recent News</h2>
-        <p>Berita Berita Terkini</p>
+        <h2>Semua Berita</h2>
+        <p>Kumpulan Berita dan Kegiatan Terbaru MAN 1 Mandailing Natal</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -497,7 +470,7 @@
         <div class="row gy-4">
 
 <?php foreach ($news as $item): ?>
-  <div class="col-xl-6" data-aos="fade-up">
+  <div class="col-md-6 col-xl-4" data-aos="fade-up">
 
     <a href="<?= base_url('news/' . $item['news_id']) ?>"
        class="text-decoration-none text-dark">
@@ -742,67 +715,45 @@
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+        <div class="col-lg-5 col-md-6 footer-about">
+          <a href="<?= base_url('home') ?>" class="logo d-flex align-items-center">
             <span class="sitename">MAN 1 Mandailing Natal</span>
           </a>
+          <p class="footer-tagline">Madrasah Aliyah Negeri yang Smart, Disiplin, dan Religius — mencetak generasi berilmu dan berakhlak mulia.</p>
           <div class="footer-contact pt-3">
-            <p>Sumatra Utara, Indonesia</p>
-            <p>RH5C+3V8, Parbangunan, Kec. Panyabungan, Kabupaten Mandailing Natal, Sumatera Utara 22952
-            <p class="mt-3"><strong>Phone:</strong> <span>+62 812 3456 7890</span></p>
-            <p><strong>Email:</strong> <span>info@man1mandailingnata.com</span></p>
+            <p><i class="bi bi-geo-alt-fill"></i> RH5C+3V8, Parbangunan, Kec. Panyabungan, Kabupaten Mandailing Natal, Sumatera Utara 22952</p>
+            <p><i class="bi bi-telephone-fill"></i> <span>+62 812 3456 7890</span></p>
+            <p><i class="bi bi-envelope-fill"></i> <span>info@man1mandailingnata.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <!-- <h4>Useful Links</h4>
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Tautan Cepat</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul> -->
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('home') ?>">Beranda</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('sejarah') ?>">Sejarah</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('visi-misi') ?>">Visi &amp; Misi</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('berita') ?>">Berita</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('pengumuman') ?>">Pengumuman</a></li>
+          </ul>
         </div>
 
-        <!-- <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
+        <div class="col-lg-4 col-md-3 footer-links">
+          <h4>Layanan</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('outtracat') ?>">PTSP</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('kalender-akademik') ?>">Kalender Akademik</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('outzona-integrasi') ?>">Zona Integritas</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="<?= base_url('outmutasi-siswa') ?>">Mutasi Siswa</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://pmb.man1mandailingnatal.sch.id/">PPDB Online</a></li>
           </ul>
-        </div> -->
-<!-- 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div> -->
-
-        <!-- <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div> -->
+        </div>
 
       </div>
     </div>
