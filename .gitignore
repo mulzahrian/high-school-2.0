@@ -1,23 +1,64 @@
-*/config/development
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+*/Config/Development/
+*/config/development/
+
+# Composer dependencies
+/vendor/
+
+# CodeIgniter runtime files
+/writable/cache/*
+!/writable/cache/index.html
+/writable/debugbar/*
+!/writable/debugbar/index.html
+/writable/logs/*
+!/writable/logs/index.html
+/writable/session/*
+!/writable/session/index.html
+/writable/uploads/*
+!/writable/uploads/index.html
+
+# Legacy CodeIgniter runtime files
 */logs/log-*.php
 !*/logs/index.html
 */cache/*
 !system/cache/*
 !*/cache/index.html
 !*/cache/.htaccess
+/application/logs/*
+!/application/logs/index.html
+!/application/logs/.htaccess
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+# Test output and coverage
+/.phpunit.cache/
+/.phpunit.result.cache
+/build/
+/coverage/
 
-#codeigniter 3
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
-/vendor/
+# Generated archives and backups
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.bak
+*.tmp
 
-# allow uploads folder
-!public/uploads/
-!public/uploads/.gitkeep
+# IDE and operating-system files
+/.idea/
+/.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
 
+# Generated user-guide files
+/user_guide_src/build/*
+/user_guide_src/cilexer/build/*
+/user_guide_src/cilexer/dist/*
+/user_guide_src/cilexer/pycilexer.egg-info/*
+
+# Public uploads are application content and remain versioned.
+!/public/uploads/
+!/public/uploads/**
